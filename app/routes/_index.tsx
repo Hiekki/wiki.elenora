@@ -1,5 +1,4 @@
 import type { MetaFunction } from '@remix-run/node';
-import { desc } from 'framer-motion/client';
 import { HoverEffect } from '~/components/ui/card-hover-effect';
 import { WavyBackground } from '~/components/ui/wavy-background';
 
@@ -41,10 +40,12 @@ export default function Index() {
     return (
         <WavyBackground backgroundFill='#262626' colors={['#3cc4fd', '#8f66fe', '#ea00ff', '#8f66fe', '#3cc4fd']}>
             <div className='container mx-auto'>
-                <div className='flex flex-col items-center justify-center h-screen'>
-                    <h1 className='font-bold text-4xl'>Elenora Group Wiki</h1>
+                <div className='flex flex-col text-center justify-center xl:h-screen'>
+                    <h1 className='font-bold text-4xl mt-12 xl:mt-0'>Elenora Group Wiki</h1>
                     <p className='text-xl mt-6 text-white/60'>Please select a project you'd like to see.</p>
-                    <HoverEffect items={projects} />
+                    <div className='text-left'>
+                        <HoverEffect items={projects} />
+                    </div>
                 </div>
             </div>
         </WavyBackground>

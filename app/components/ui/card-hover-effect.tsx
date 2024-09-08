@@ -48,12 +48,16 @@ export const HoverEffect = ({
                         )}
                     </AnimatePresence>
                     <Card>
-                        <div className='flex flex-row justify-between'>
-                            <div className='flex flex-col'>
+                        <div className='flex flex-col xl:flex-row justify-between'>
+                            <div className='flex flex-col order-2 xl:order-1 text-center xl:text-left'>
                                 <CardTitle>{item.title}</CardTitle>
                                 <CardDescription>{item.description}</CardDescription>
                             </div>
-                            <CardImage image={item.image.url} description={item.image.description} />
+                            <CardImage
+                                image={item.image.url}
+                                description={item.image.description}
+                                className='flex items-center justify-center order-1 xl:order-2 w-full h-[128px] xl:w-[128px]'
+                            />
                         </div>
                     </Card>
                 </Link>
