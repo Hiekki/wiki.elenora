@@ -12,7 +12,7 @@ const projects = [
         title: 'Elenora',
         description:
             'Elenora is a feature rich RuneScape Clan administration discord bot with a wide variety of commands. The creation of Elenora was to provide a reliable, dependable, & helpful tool that would service any sized community.',
-        link: '/elenora',
+        link: 'https://elenora.gg/commands',
         image: { url: '/projects/elenora.webp', description: 'elenora logo' },
     },
     {
