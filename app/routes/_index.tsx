@@ -1,4 +1,5 @@
 import type { MetaFunction } from '@remix-run/node';
+import { desc } from 'framer-motion/client';
 import { HoverEffect } from '~/components/ui/card-hover-effect';
 import { WavyBackground } from '~/components/ui/wavy-background';
 
@@ -12,27 +13,27 @@ const projects = [
         description:
             'Elenora is a feature rich RuneScape Clan administration discord bot with a wide variety of commands. The creation of Elenora was to provide a reliable, dependable, & helpful tool that would service any sized community.',
         link: '/elenora',
-        image: '/projects/elenora.png',
+        image: { url: '/projects/elenora.png', description: 'elenora logo' },
     },
     {
         title: 'Cora',
         description: 'Cora is a logging bot for Discord. It allows you to log messages, joins, leaves, kicks, bans, and so much more.',
         link: '/cora',
-        image: '/projects/cora.png',
+        image: { url: '/projects/cora.png', description: 'cora logo' },
     },
     {
         title: 'Stubby',
         description:
             'A simple Discord ticketing system bot. Allows you to create different categories that allows users to open a ticket based on those categories and have one on one conversations with those individuals.',
         link: '/stubby',
-        image: '/projects/stubby.png',
+        image: { url: '/projects/stubby.png', description: 'stubby logo' },
     },
     {
         title: 'NotiFyre',
         description:
             'A simple Discord reminder bot. This bot allows you to use simple times like 1h/1hour, 30m/30minutes, or 1d12hr15m, or specific times like 7pm, 7:00pm, or 19:00, or more complex dates and times like "next Friday at 3pm" or "the first Tuesday of next month at noon".',
         link: '/notifyre',
-        image: '/projects/notifyre.png',
+        image: { url: '/projects/notifyre.png', description: 'notifyre logo' },
     },
 ];
 

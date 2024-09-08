@@ -11,7 +11,10 @@ export const HoverEffect = ({
         title: string;
         description: string;
         link: string;
-        image: string;
+        image: {
+            url: string;
+            description: string;
+        };
     }[];
     className?: string;
 }) => {
@@ -50,7 +53,7 @@ export const HoverEffect = ({
                                 <CardTitle>{item.title}</CardTitle>
                                 <CardDescription>{item.description}</CardDescription>
                             </div>
-                            <CardImage image={item.image} />
+                            <CardImage image={item.image.url} description={item.image.description} />
                         </div>
                     </Card>
                 </Link>
@@ -70,13 +73,13 @@ export const Card = ({ className, children }: { className?: string; children: Re
 };
 
 export const CardTitle = ({ className, children }: { className?: string; children: React.ReactNode }) => {
-    return <h4 className={cn('text-white font-bold tracking-wide mt-4 text-2xl', className)}>{children}</h4>;
+    return <h1 className={cn('text-white font-bold tracking-wide mt-4 text-2xl', className)}>{children}</h1>;
 };
 
-export const CardImage = ({ className, image }: { className?: string; image: string }) => {
-    return <img src={image} width={128} height={128} className={cn('rounded-2xl object-contain', className)} />;
+export const CardImage = ({ className, image, description }: { className?: string; image: string; description: string }) => {
+    return <img src={image} alt={description} width={128} height={128} className={cn('rounded-2xl object-contain', className)} />;
 };
 
 export const CardDescription = ({ className, children }: { className?: string; children: React.ReactNode }) => {
-    return <p className={cn('max-w-96 mt-4 text-white/40 tracking-wide leading-relaxed text-md', className)}>{children}</p>;
+    return <p className={cn('max-w-96 mt-4 text-white/60 tracking-wide leading-relaxed text-md', className)}>{children}</p>;
 };
