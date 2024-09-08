@@ -1,48 +1,51 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from '@remix-run/node';
+import { HoverEffect } from '~/components/ui/card-hover-effect';
+import { WavyBackground } from '~/components/ui/wavy-background';
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+    return [{ title: 'Wiki | Elenora Group' }, { name: 'description', content: 'A wiki for all things Elenora Group.' }];
 };
 
+const projects = [
+    {
+        title: 'Elenora',
+        description:
+            'Elenora is a feature rich RuneScape Clan administration discord bot with a wide variety of commands. The creation of Elenora was to provide a reliable, dependable, & helpful tool that would service any sized community.',
+        link: '/elenora',
+        image: '/projects/elenora.png',
+    },
+    {
+        title: 'Cora',
+        description: 'Cora is a logging bot for Discord. It allows you to log messages, joins, leaves, kicks, bans, and so much more.',
+        link: '/cora',
+        image: '/projects/cora.png',
+    },
+    {
+        title: 'Stubby',
+        description:
+            'A simple Discord ticketing system bot. Allows you to create different categories that allows users to open a ticket based on those categories and have one on one conversations with those individuals.',
+        link: '/stubby',
+        image: '/projects/stubby.png',
+    },
+    {
+        title: 'NotiFyre',
+        description:
+            'A simple Discord reminder bot. This bot allows you to use simple times like 1h/1hour, 30m/30minutes, or 1d12hr15m, or specific times like 7pm, 7:00pm, or 19:00, or more complex dates and times like "next Friday at 3pm" or "the first Tuesday of next month at noon".',
+        link: '/notifyre',
+        image: '/projects/notifyre.png',
+    },
+];
+
 export default function Index() {
-  return (
-    <div className="font-sans p-4">
-      <h1 className="text-3xl">Welcome to Remix</h1>
-      <ul className="list-disc mt-4 pl-6 space-y-2">
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/start/quickstart"
-            rel="noreferrer"
-          >
-            5m Quick Start
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/start/tutorial"
-            rel="noreferrer"
-          >
-            30m Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/docs"
-            rel="noreferrer"
-          >
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
+    return (
+        <WavyBackground backgroundFill='#262626' colors={['#3cc4fd', '#8f66fe', '#ea00ff', '#8f66fe', '#3cc4fd']}>
+            <div className='container mx-auto'>
+                <div className='flex flex-col items-center justify-center h-screen'>
+                    <h1 className='font-bold text-4xl'>Elenora Group Wiki</h1>
+                    <p className='text-xl mt-6 text-white/60'>Please select a project you'd like to see.</p>
+                    <HoverEffect items={projects} />
+                </div>
+            </div>
+        </WavyBackground>
+    );
 }
