@@ -63,9 +63,6 @@ export const HoverEffect = ({
                             />
                         </div>
                     </Card>
-                    <CardFooter className='relative left-8 bottom-16'>{`${item.title} was created by Elenora Group ©️ ${
-                        item.year == new Date().getFullYear() ? item.year : `${item.year}-${new Date().getFullYear()}`
-                    }`}</CardFooter>
                 </Link>
             ))}
         </div>
