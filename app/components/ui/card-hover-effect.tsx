@@ -20,23 +20,33 @@ export const HoverEffect = ({
     }[];
     className?: string;
 }) => {
-    let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
+
+    const handleFocus = (idx: number) => setFocusedIndex(idx);
+    const handleBlur = () => setFocusedIndex(null);
 
     return (
         <div className={cn('grid grid-cols-1 xl:grid-cols-2 py-10', className)}>
             {items.map((item, idx) => (
                 <Link
-                    to={item?.link}
-                    key={item?.link}
-                    className='relative group block p-2 h-full w-full max-w-[640px] mx-auto'
+                    to={item.link}
+                    key={item.link}
+                    tabIndex={idx}
+                    onFocus={() => handleFocus(idx)}
+                    onBlur={handleBlur}
+                    className='relative group block p-2 h-full w-full max-w-[640px] mx-auto focus:outline-none'
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}
                 >
                     <AnimatePresence>
-                        {hoveredIndex === idx && (
+                        {(hoveredIndex === idx || focusedIndex === idx) && (
                             <motion.span
                                 className='absolute inset-0 h-full w-full block rounded-3xl'
-                                style={{ background: item.color }}
+                                style={{
+                                    background: item.color,
+                                    outline: focusedIndex === idx ? `2px solid ${item.color}` : 'none',
+                                }}
                                 layoutId='hoverBackground'
                                 initial={{ opacity: 0 }}
                                 animate={{
