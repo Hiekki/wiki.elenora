@@ -64,6 +64,7 @@
         @apply border-border;
     }
     body {
+        height: 100%;
         @apply bg-neutral-800 text-white;
     }
 }

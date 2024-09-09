@@ -68,7 +68,7 @@ export const HoverEffect = ({
 
 export const Card = ({ className, children }: { className?: string; children: React.ReactNode }) => {
     return (
-        <div className={cn('rounded-2xl h-full w-full p-4 overflow-hidden bg-neutral-900 relative z-20', className)}>
+        <div className={cn('rounded-2xl h-full w-full p-4 overflow-hidden bg-neutral-900/80 relative z-20', className)}>
             <div className='relative z-50'>
                 <div className='p-4'>{children}</div>
             </div>
