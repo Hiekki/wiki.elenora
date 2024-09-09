@@ -32,7 +32,7 @@ export const HoverEffect = ({
                 <Link
                     to={item.link}
                     key={item.link}
-                    tabIndex={idx}
+                    tabIndex={idx + 1}
                     onFocus={() => handleFocus(idx)}
                     onBlur={handleBlur}
                     className='relative group block p-2 h-full w-full max-w-[640px] mx-auto focus:outline-none'
