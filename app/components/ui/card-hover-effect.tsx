@@ -1,5 +1,5 @@
 import { cn } from '~/lib/utils';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, color, motion } from 'framer-motion';
 import { Link } from '@remix-run/react';
 import { useState } from 'react';
 
@@ -15,6 +15,8 @@ export const HoverEffect = ({
             url: string;
             description: string;
         };
+        color: string;
+        year: number;
     }[];
     className?: string;
 }) => {
@@ -33,7 +35,8 @@ export const HoverEffect = ({
                     <AnimatePresence>
                         {hoveredIndex === idx && (
                             <motion.span
-                                className='absolute inset-0 h-full w-full bg-[#E900FE] block rounded-3xl'
+                                className='absolute inset-0 h-full w-full block rounded-3xl'
+                                style={{ background: item.color }}
                                 layoutId='hoverBackground'
                                 initial={{ opacity: 0 }}
                                 animate={{
@@ -47,7 +50,7 @@ export const HoverEffect = ({
                             />
                         )}
                     </AnimatePresence>
-                    <Card>
+                    <Card className='h-full'>
                         <div className='flex flex-col xl:flex-row justify-between'>
                             <div className='flex flex-col order-2 xl:order-1 text-center xl:text-left'>
                                 <CardTitle>{item.title}</CardTitle>
@@ -60,6 +63,9 @@ export const HoverEffect = ({
                             />
                         </div>
                     </Card>
+                    <CardFooter className='relative left-8 bottom-16'>{`${item.title} was created by Elenora Group ©️ ${
+                        item.year == new Date().getFullYear() ? item.year : `${item.year}-${new Date().getFullYear()}`
+                    }`}</CardFooter>
                 </Link>
             ))}
         </div>
@@ -86,4 +92,10 @@ export const CardImage = ({ className, image, description }: { className?: strin
 
 export const CardDescription = ({ className, children }: { className?: string; children: React.ReactNode }) => {
     return <p className={cn('max-w-96 mt-4 text-white/60 tracking-wide leading-relaxed text-md', className)}>{children}</p>;
+};
+
+export const CardFooter = ({ className, children }: { className?: string; children: React.ReactNode }) => {
+    return (
+        <p className={cn('z-30 max-w-96 mt-4 text-white/40 tracking-wide leading-relaxed text-xs translate-y-4', className)}>{children}</p>
+    );
 };
