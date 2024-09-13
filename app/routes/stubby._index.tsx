@@ -1,5 +1,5 @@
-const Stubby = () => {
-    return <div className='text-5xl w-full h-screen flex items-center justify-center'>Stubby Docs Coming Soon™️</div>;
+const StubbyGettingStarted = () => {
+    return <div className='text-5xl w-full h-screen flex items-center justify-center'>all the things</div>;
 };
 
-export default Stubby;
+export default StubbyGettingStarted;

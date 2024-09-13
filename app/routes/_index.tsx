@@ -30,7 +30,7 @@ const projects = [
             'A simple Discord ticketing system bot. Allows you to create different categories that allows users to open a ticket based on those categories and have one on one conversations with those individuals.',
         link: '/stubby',
         image: { url: '/projects/stubby.webp', description: 'stubby logo' },
-        color: '#4d0a8e',
+        color: '#7c36c1',
         year: 2024,
     },
     {
