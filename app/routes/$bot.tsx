@@ -23,7 +23,7 @@ export const meta: MetaFunction = ({ params }) => {
         { property: 'og:url', content: data.url },
 
         // Twitter meta tags
-        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:card', content: 'summary' },
         { name: 'twitter:description', content: data.description },
         { name: 'twitter:image', content: data.image },
         { name: 'twitter:url', content: data.url },
