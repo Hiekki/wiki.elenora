@@ -12,6 +12,9 @@ export const meta: MetaFunction = ({ params }) => {
     return [
         { title: title },
         { name: 'description', content: data.description },
+        { name: 'type', content: 'link' },
+        { name: 'theme-color', content: data.color },
+        { name: 'apple-mobile-web-app-title', content: title },
 
         // Open Graph meta tags
         { property: 'og:title', content: title },
@@ -25,10 +28,6 @@ export const meta: MetaFunction = ({ params }) => {
         { name: 'twitter:image', content: data.image },
         { name: 'twitter:url', content: data.url },
         { name: 'twitter:image:alt', content: title },
-
-        // Other meta tags
-        { name: 'theme-color', content: data.color },
-        { name: 'apple-mobile-web-app-title', content: title },
     ];
 };
 
