@@ -16,11 +16,11 @@ export const meta: MetaFunction = ({ params }) => {
         // Open Graph meta tags
         { property: 'og:title', content: title },
         { property: 'og:description', content: data.description },
+        { property: 'og:image', content: data.image },
         { property: 'og:url', content: data.url },
 
         // Twitter meta tags
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: title },
         { name: 'twitter:description', content: data.description },
         { name: 'twitter:image', content: data.image },
         { name: 'twitter:url', content: data.url },
