@@ -3,7 +3,33 @@ import { HoverEffect } from '~/components/ui/card-hover-effect';
 import { WavyBackground } from '~/components/ui/wavy-background';
 
 export const meta: MetaFunction = () => {
-    return [{ title: 'Wiki | Elenora Group' }, { name: 'description', content: 'A wiki for all things Elenora Group.' }];
+    return [
+        { title: 'Wiki | Elenora Group' },
+        { name: 'description', content: 'A wiki for all things Elenora Group.' },
+        {
+            name: 'keywords',
+            content:
+                'Elenora Group, Elenora, Wiki, RuneScape, Clan, Discord, Bot, Elenora Wiki, Stubby, Cora, NotiFyre, Elenora Group Wiki',
+        },
+
+        // Open Graph meta tags
+        { property: 'og:title', content: 'Wiki | Elenora Group' },
+        { property: 'og:description', content: 'A wiki for all things Elenora Group.' },
+        { property: 'og:image', content: '/projects/elenora.webp' },
+        { property: 'og:url', content: 'https://wiki.elenora.gg' },
+
+        // Twitter meta tags
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'Wiki | Elenora Group' },
+        { name: 'twitter:description', content: 'A wiki for all things Elenora Group.' },
+        { name: 'twitter:image', content: '/projects/elenora.webp' },
+        { name: 'twitter:url', content: 'https://wiki.elenora.gg' },
+        { name: 'twitter:image:alt', content: 'Elenora Group Wiki' },
+
+        // Other meta tags
+        { name: 'theme-color', content: '#ea00ff' },
+        { name: 'apple-mobile-web-app-title', content: 'Wiki | Elenora Group' },
+    ];
 };
 
 const projects = [

@@ -1,5 +1,6 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
+import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration, useRouteError } from '@remix-run/react';
 import './tailwind.css';
+import ErrorPage from './components/ErrorPage';
 
 export function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -12,7 +13,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </head>
             <body>
                 {/* Navbar */}
-                <div className='container mx-auto'>{children}</div>
+                <div className=''>{children}</div>
                 <ScrollRestoration />
                 <Scripts />
             </body>
@@ -22,4 +23,29 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
     return <Outlet />;
+}
+
+export function ErrorBoundary() {
+    const error = useRouteError();
+    return (
+        <html>
+            <head>
+                <title>Oops!</title>
+                <Meta />
+                <Links />
+            </head>
+            <body>
+                <h1>
+                    {isRouteErrorResponse(error) ? (
+                        <ErrorPage statusCode={error.status} message={error.statusText} />
+                    ) : error instanceof Error ? (
+                        error.message
+                    ) : (
+                        'Unknown Error'
+                    )}
+                </h1>
+                <Scripts />
+            </body>
+        </html>
+    );
 }
