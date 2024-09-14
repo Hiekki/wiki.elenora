@@ -11,6 +11,7 @@ export const meta: MetaFunction = () => {
             content:
                 'Elenora Group, Elenora, Wiki, RuneScape, Clan, Discord, Bot, Elenora Wiki, Stubby, Cora, NotiFyre, Elenora Group Wiki',
         },
+        { name: 'type', content: 'link' },
 
         // Open Graph meta tags
         { property: 'og:title', content: 'Wiki | Elenora Group' },
@@ -19,7 +20,7 @@ export const meta: MetaFunction = () => {
         { property: 'og:url', content: 'https://wiki.elenora.gg' },
 
         // Twitter meta tags
-        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:card', content: 'summary' },
         { name: 'twitter:title', content: 'Wiki | Elenora Group' },
         { name: 'twitter:description', content: 'A wiki for all things Elenora Group.' },
         { name: 'twitter:image', content: '/projects/elenora.webp' },

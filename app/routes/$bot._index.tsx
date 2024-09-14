@@ -7,7 +7,28 @@ export const meta: MetaFunction = ({ params }) => {
     const botName = params.bot as keyof BotMetaTagsType;
     const data = BotMetaTags[botName];
 
-    return [{ title: `${data.name} Getting Started | Elenora Group` }];
+    const title = `${data.name} Getting Started | Elenora Group`;
+
+    return [
+        { title: title },
+        { name: 'description', content: data.description },
+        { name: 'type', content: 'link' },
+        { name: 'theme-color', content: data.color },
+        { name: 'apple-mobile-web-app-title', content: title },
+
+        // Open Graph meta tags
+        { property: 'og:title', content: title },
+        { property: 'og:description', content: data.description },
+        { property: 'og:image', content: data.image },
+        { property: 'og:url', content: data.url },
+
+        // Twitter meta tags
+        { name: 'twitter:card', content: 'summary' },
+        { name: 'twitter:description', content: data.description },
+        { name: 'twitter:image', content: data.image },
+        { name: 'twitter:url', content: data.url },
+        { name: 'twitter:image:alt', content: title },
+    ];
 };
 
 export default function BotProject() {
