@@ -7,7 +7,7 @@ export const meta: MetaFunction = ({ params }) => {
     const botName = params.bot as keyof BotMetaTagsType;
     const data = BotMetaTags[botName];
 
-    const title = `${data.name} Bot Wiki | Elenora Group`;
+    const title = `${data.name} Wiki | Elenora Group`;
 
     return [
         { title: title },

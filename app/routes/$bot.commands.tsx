@@ -1,4 +1,14 @@
+import { MetaFunction } from '@remix-run/node';
 import { useParams } from '@remix-run/react';
+import { BotMetaTagsType } from '~/types/Meta';
+import { BotMetaTags } from '~/utils/BotMetaTags';
+
+export const meta: MetaFunction = ({ params }) => {
+    const botName = params.bot as keyof BotMetaTagsType;
+    const data = BotMetaTags[botName];
+
+    return [{ title: `${data.name} Commands | Elenora Group` }];
+};
 
 export default function BotCommands() {
     const { bot } = useParams();
