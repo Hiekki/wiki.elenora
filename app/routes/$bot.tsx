@@ -16,7 +16,6 @@ export const meta: MetaFunction = ({ params }) => {
         // Open Graph meta tags
         { property: 'og:title', content: title },
         { property: 'og:description', content: data.description },
-        { property: 'og:image', content: data.image },
         { property: 'og:url', content: data.url },
 
         // Twitter meta tags
