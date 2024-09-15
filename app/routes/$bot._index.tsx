@@ -15,6 +15,11 @@ export default function BotProject() {
             <p className='text-4xl font-bold'>
                 Getting Started for <span className='capitalize'>{bot}</span> coming soon™️.
             </p>
+            <a href='/'>
+                <div className='mt-8 bg-neutral-900 rounded-lg py-3 px-6 hover:bg-neutral-700 transition-all duration-200 ease-in-out'>
+                    <p className='font-bold text-lg'>Back</p>
+                </div>
+            </a>
         </div>
     );
 }

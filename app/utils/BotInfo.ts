@@ -11,6 +11,7 @@ export const BotInfo: Record<string, BotMetaTags> = {
         image_description: 'Cora logo',
         url: 'https://wiki.elenora.gg/cora',
         year: 2022,
+        page: '/cora',
     },
     elenora: {
         name: 'Elenora',
@@ -21,6 +22,7 @@ export const BotInfo: Record<string, BotMetaTags> = {
         image_description: 'Elenora logo',
         url: 'https://wiki.elenora.gg/elenora',
         year: 2020,
+        page: 'https://elenora.gg/commands',
     },
     notifyre: {
         name: 'NotiFyre',
@@ -31,6 +33,7 @@ export const BotInfo: Record<string, BotMetaTags> = {
         image_description: 'NotiFyre logo',
         url: 'https://wiki.elenora.gg/notifyre',
         year: 2024,
+        page: '/notifyre',
     },
     stubby: {
         name: 'Stubby',
@@ -41,5 +44,6 @@ export const BotInfo: Record<string, BotMetaTags> = {
         image_description: 'Stubby logo',
         url: 'https://wiki.elenora.gg/stubby',
         year: 2024,
+        page: '/stubby',
     },
 };

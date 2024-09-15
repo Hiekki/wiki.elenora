@@ -15,7 +15,7 @@ export const HoverEffect = ({ items, className }: { items: string[]; className?:
         <div className={cn('grid grid-cols-1 xl:grid-cols-2 py-10', className)}>
             {items.map((item, idx) => (
                 <Link
-                    to={BotInfo[item].url}
+                    to={BotInfo[item].page}
                     key={BotInfo[item].url}
                     tabIndex={idx + 1}
                     onFocus={() => handleFocus(idx)}

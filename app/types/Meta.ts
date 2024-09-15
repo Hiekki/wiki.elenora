@@ -6,6 +6,7 @@ type BotMetaTags = {
     image_description: string;
     url: string;
     year: number;
+    page: string;
 };
 
 export type { BotMetaTags };
