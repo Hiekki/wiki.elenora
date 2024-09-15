@@ -1,25 +1,10 @@
 import { cn } from '~/lib/utils';
-import { AnimatePresence, color, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from '@remix-run/react';
 import { useState } from 'react';
+import { BotInfo } from '~/utils/BotInfo';
 
-export const HoverEffect = ({
-    items,
-    className,
-}: {
-    items: {
-        title: string;
-        description: string;
-        link: string;
-        image: {
-            url: string;
-            description: string;
-        };
-        color: string;
-        year: number;
-    }[];
-    className?: string;
-}) => {
+export const HoverEffect = ({ items, className }: { items: string[]; className?: string }) => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
 
@@ -30,8 +15,8 @@ export const HoverEffect = ({
         <div className={cn('grid grid-cols-1 xl:grid-cols-2 py-10', className)}>
             {items.map((item, idx) => (
                 <Link
-                    to={item.link}
-                    key={item.link}
+                    to={BotInfo[item].url}
+                    key={BotInfo[item].url}
                     tabIndex={idx + 1}
                     onFocus={() => handleFocus(idx)}
                     onBlur={handleBlur}
@@ -44,8 +29,8 @@ export const HoverEffect = ({
                             <motion.span
                                 className='absolute inset-0 h-full w-full block rounded-3xl'
                                 style={{
-                                    background: item.color,
-                                    outline: focusedIndex === idx ? `2px solid ${item.color}` : 'none',
+                                    background: BotInfo[item].color,
+                                    outline: focusedIndex === idx ? `2px solid ${BotInfo[item].color}` : 'none',
                                 }}
                                 layoutId='hoverBackground'
                                 initial={{ opacity: 0 }}
@@ -63,12 +48,12 @@ export const HoverEffect = ({
                     <Card className='h-full'>
                         <div className='flex flex-col xl:flex-row justify-between'>
                             <div className='flex flex-col order-2 xl:order-1 text-center xl:text-left'>
-                                <CardTitle>{item.title}</CardTitle>
-                                <CardDescription>{item.description}</CardDescription>
+                                <CardTitle>{BotInfo[item].name}</CardTitle>
+                                <CardDescription>{BotInfo[item].description}</CardDescription>
                             </div>
                             <CardImage
-                                image={item.image.url}
-                                description={item.image.description}
+                                image={BotInfo[item].image}
+                                description={BotInfo[item].image_description}
                                 className='flex items-center justify-center order-1 xl:order-2 w-full h-[128px] xl:w-[128px]'
                             />
                         </div>

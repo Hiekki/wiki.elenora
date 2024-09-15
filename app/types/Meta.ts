@@ -1,9 +1,11 @@
-type BotMetaTagsType = {
+type BotMetaTags = {
     name: string;
     description: string;
     color: string;
     image: string;
+    image_description: string;
     url: string;
+    year: number;
 };
 
-export type { BotMetaTagsType };
+export type { BotMetaTags };
